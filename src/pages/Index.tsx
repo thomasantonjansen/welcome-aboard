@@ -50,30 +50,30 @@ const Index = () => {
       {/* Bottom Bar */}
       <footer className="bg-primary py-6 lg:py-8 relative">
         <div className="container mx-auto px-6">
-          {/* Center: Icon with horizontal lines */}
-          <div className="flex items-center justify-center mb-4">
-            {/* Left horizontal line */}
-            <div className="flex-1 h-px bg-primary-foreground/60 max-w-32 lg:max-w-48" />
-            
-            {/* Centered Icon */}
-            <div className="mx-6 lg:mx-8">
-              <img 
-                src={logoIcon} 
-                alt="Pluk bloem" 
-                className="w-12 h-12 lg:w-14 lg:h-14 object-contain"
-              />
-            </div>
-            
-            {/* Right horizontal line */}
-            <div className="flex-1 h-px bg-primary-foreground/60 max-w-32 lg:max-w-48" />
-          </div>
-
-          {/* Bottom row: Address left, Phone+Email right */}
-          <div className="flex flex-col md:flex-row items-center md:items-end justify-between text-primary-foreground gap-4 md:gap-0">
+          {/* Main row: Address left, Lines+Icon center, Phone+Email right - all same level */}
+          <div className="flex items-center justify-between text-primary-foreground mb-4">
             {/* Left: Address */}
             <div className="flex items-center gap-2 text-sm lg:text-base font-body">
               <MapPin className="w-4 h-4 flex-shrink-0" />
               <span>Havenstraat 137, 1211 KK Hilversum</span>
+            </div>
+
+            {/* Center: Icon with horizontal lines */}
+            <div className="flex items-center flex-1 justify-center mx-4">
+              {/* Left horizontal line */}
+              <div className="flex-1 h-px bg-primary-foreground/60 max-w-24 lg:max-w-32" />
+              
+              {/* Centered Icon */}
+              <div className="mx-4 lg:mx-6">
+                <img 
+                  src={logoIcon} 
+                  alt="Pluk bloem" 
+                  className="w-10 h-10 lg:w-12 lg:h-12 object-contain"
+                />
+              </div>
+              
+              {/* Right horizontal line */}
+              <div className="flex-1 h-px bg-primary-foreground/60 max-w-24 lg:max-w-32" />
             </div>
 
             {/* Right: Phone + Email */}
@@ -94,6 +94,13 @@ const Index = () => {
                 <span>info@praktijkpluk.nl</span>
               </a>
             </div>
+          </div>
+
+          {/* Bottom row: Legal links centered */}
+          <div className="flex items-center justify-center gap-4 text-primary-foreground text-xs lg:text-sm font-body">
+            <a href="#" className="hover:opacity-80 transition-opacity">Algemene Voorwaarden</a>
+            <span>© Pluk 2026</span>
+            <a href="#" className="hover:opacity-80 transition-opacity">Privacy Verklaring</a>
           </div>
         </div>
       </footer>
