@@ -14,23 +14,23 @@ const Index = () => {
           style={{ backgroundImage: `url(${heroImage})` }}
         />
 
-        {/* Content Overlay */}
-        <div className="relative h-full flex flex-col justify-between p-6 lg:p-12">
-          {/* Logo */}
-          <div className="flex justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        {/* Content Overlay - Centered */}
+        <div className="relative h-full flex flex-col items-center justify-start pt-8 lg:pt-12 px-6">
+          {/* Logo - Centered at top */}
+          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <img 
               src={logoFull} 
               alt="Pluk - Praktijk voor Infant Mental Health" 
-              className="w-40 lg:w-56 xl:w-64 h-auto"
+              className="w-48 lg:w-64 xl:w-72 h-auto"
             />
           </div>
 
-          {/* Main Text */}
+          {/* Main Text - Centered below logo */}
           <div 
-            className="max-w-lg lg:max-w-xl animate-fade-in-left" 
+            className="mt-8 lg:mt-12 max-w-lg lg:max-w-xl animate-fade-in" 
             style={{ animationDelay: '0.5s' }}
           >
-            <div className="bg-background/85 backdrop-blur-sm rounded-lg p-6 lg:p-8 shadow-lg">
+            <div className="bg-background/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg text-center">
               <p className="font-display text-lg lg:text-xl xl:text-2xl text-foreground leading-relaxed italic">
                 IMH-Praktijk Pluk, voor jonge kinderen en hun ouders, opent haar deuren in april 2026. 
                 Heb je voor die tijd al vragen? Neem gerust contact met ons op, we denken graag met je mee.
@@ -44,19 +44,19 @@ const Index = () => {
               </a>
             </div>
           </div>
-
-          {/* Spacer */}
-          <div />
         </div>
       </main>
 
       {/* Bottom Bar */}
-      <footer className="bg-primary py-6 lg:py-8">
+      <footer className="bg-primary py-6 lg:py-8 relative">
         <div className="container mx-auto px-6">
-          {/* Contact Info - Centered with white divider lines */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 text-primary-foreground">
-            {/* Logo Icon */}
-            <div className="flex items-center">
+          {/* Center: Icon with horizontal lines */}
+          <div className="flex items-center justify-center mb-4">
+            {/* Left horizontal line */}
+            <div className="flex-1 h-px bg-primary-foreground/60 max-w-32 lg:max-w-48" />
+            
+            {/* Centered Icon */}
+            <div className="mx-6 lg:mx-8">
               <img 
                 src={logoIcon} 
                 alt="Pluk bloem" 
@@ -64,53 +64,36 @@ const Index = () => {
               />
             </div>
             
-            {/* Divider */}
-            <div className="hidden md:block w-px h-8 bg-primary-foreground/60 mx-6" />
-            
-            {/* Email */}
-            <a 
-              href="mailto:info@praktijkpluk.nl" 
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-            >
-              <Mail className="w-4 h-4 flex-shrink-0" />
-              <span className="font-body text-sm lg:text-base">info@praktijkpluk.nl</span>
-            </a>
-            
-            {/* Divider */}
-            <div className="hidden md:block w-px h-8 bg-primary-foreground/60 mx-6" />
-            
-            {/* Phone */}
-            <a 
-              href="tel:035-2340480" 
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-            >
-              <Phone className="w-4 h-4 flex-shrink-0" />
-              <span className="font-body text-sm lg:text-base">035-2340480</span>
-            </a>
-            
-            {/* Divider */}
-            <div className="hidden md:block w-px h-8 bg-primary-foreground/60 mx-6" />
-            
-            {/* Address */}
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span className="font-body text-sm lg:text-base">Havenstraat 137, 1211 KK Hilversum</span>
-            </div>
+            {/* Right horizontal line */}
+            <div className="flex-1 h-px bg-primary-foreground/60 max-w-32 lg:max-w-48" />
           </div>
 
-          {/* Footer Links */}
-          <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-primary-foreground/80 text-xs lg:text-sm font-body">
-            <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-primary-foreground transition-colors">
-                Algemene Voorwaarden
+          {/* Bottom row: Address left, Phone+Email right */}
+          <div className="flex flex-col md:flex-row items-center md:items-end justify-between text-primary-foreground gap-4 md:gap-0">
+            {/* Left: Address */}
+            <div className="flex items-center gap-2 text-sm lg:text-base font-body">
+              <MapPin className="w-4 h-4 flex-shrink-0" />
+              <span>Havenstraat 137, 1211 KK Hilversum</span>
+            </div>
+
+            {/* Right: Phone + Email */}
+            <div className="flex items-center gap-4 lg:gap-6 text-sm lg:text-base font-body">
+              <a 
+                href="tel:035-2340480" 
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>035-2340480</span>
               </a>
-              <span className="hidden md:inline">|</span>
-              <a href="#" className="hover:text-primary-foreground transition-colors">
-                Privacy Verklaring
+              
+              <a 
+                href="mailto:info@praktijkpluk.nl" 
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>info@praktijkpluk.nl</span>
               </a>
             </div>
-            <span className="hidden md:inline">|</span>
-            <p>© Pluk 2026</p>
           </div>
         </div>
       </footer>
