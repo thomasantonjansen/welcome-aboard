@@ -49,7 +49,7 @@ const Index = () => {
 
       {/* Bottom Bar */}
       <footer className="bg-primary py-6 lg:py-8 relative">
-        <div className="container mx-auto px-6">
+        <div className="w-full px-4 lg:px-6">
           {/* Main row: Address left, Lines+Icon center, Phone+Email right - all same level */}
           <div className="flex items-center justify-between text-primary-foreground mb-4">
             {/* Left: Address */}
