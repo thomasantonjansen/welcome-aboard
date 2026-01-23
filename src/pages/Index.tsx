@@ -5,72 +5,14 @@ import logoIcon from "@/assets/logo-icon.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
-      {/* Sidebar */}
-      <aside className="w-full lg:w-80 xl:w-96 bg-primary flex-shrink-0 flex flex-col justify-between p-6 lg:p-8 lg:min-h-screen order-2 lg:order-1">
-        <div className="flex flex-col gap-6">
-          {/* Logo Icon */}
-          <div className="flex justify-center lg:justify-start">
-            <img 
-              src={logoIcon} 
-              alt="Pluk bloem" 
-              className="w-16 h-16 lg:w-20 lg:h-20 object-contain"
-            />
-          </div>
-          
-          {/* Contact Info */}
-          <div className="space-y-4 text-primary-foreground">
-            <a 
-              href="mailto:info@praktijkpluk.nl" 
-              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-            >
-              <Mail className="w-5 h-5 flex-shrink-0" />
-              <span className="font-body text-sm lg:text-base">info@praktijkpluk.nl</span>
-            </a>
-            
-            <a 
-              href="tel:035-2340480" 
-              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-            >
-              <Phone className="w-5 h-5 flex-shrink-0" />
-              <span className="font-body text-sm lg:text-base">035-2340480</span>
-            </a>
-            
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-              <div className="font-body text-sm lg:text-base">
-                <p>Havenstraat 137</p>
-                <p>1211 KK Hilversum</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Footer */}
-        <div className="mt-8 lg:mt-0 text-primary-foreground/80 text-xs lg:text-sm font-body space-y-2">
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-primary-foreground transition-colors">
-              Algemene Voorwaarden
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:text-primary-foreground transition-colors">
-              Privacy Verklaring
-            </a>
-          </div>
-          <p>© Pluk 2026</p>
-        </div>
-      </aside>
-
+    <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <main className="flex-1 relative order-1 lg:order-2 min-h-[60vh] lg:min-h-screen">
+      <main className="flex-1 relative min-h-[70vh] lg:min-h-[75vh]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          {/* Subtle gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20" />
-        </div>
+        />
 
         {/* Content Overlay */}
         <div className="relative h-full flex flex-col justify-between p-6 lg:p-12">
@@ -103,17 +45,75 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Tagline */}
-          <div 
-            className="hidden lg:block text-primary-foreground/90 animate-fade-in"
-            style={{ animationDelay: '0.8s' }}
-          >
-            <p className="font-display text-sm tracking-wide">
-              Praktijk voor Infant Mental Health
-            </p>
-          </div>
+          {/* Spacer */}
+          <div />
         </div>
       </main>
+
+      {/* Bottom Bar */}
+      <footer className="bg-primary py-6 lg:py-8">
+        <div className="container mx-auto px-6">
+          {/* Contact Info - Centered with white divider lines */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 text-primary-foreground">
+            {/* Logo Icon */}
+            <div className="flex items-center">
+              <img 
+                src={logoIcon} 
+                alt="Pluk bloem" 
+                className="w-12 h-12 lg:w-14 lg:h-14 object-contain"
+              />
+            </div>
+            
+            {/* Divider */}
+            <div className="hidden md:block w-px h-8 bg-primary-foreground/60 mx-6" />
+            
+            {/* Email */}
+            <a 
+              href="mailto:info@praktijkpluk.nl" 
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span className="font-body text-sm lg:text-base">info@praktijkpluk.nl</span>
+            </a>
+            
+            {/* Divider */}
+            <div className="hidden md:block w-px h-8 bg-primary-foreground/60 mx-6" />
+            
+            {/* Phone */}
+            <a 
+              href="tel:035-2340480" 
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <Phone className="w-4 h-4 flex-shrink-0" />
+              <span className="font-body text-sm lg:text-base">035-2340480</span>
+            </a>
+            
+            {/* Divider */}
+            <div className="hidden md:block w-px h-8 bg-primary-foreground/60 mx-6" />
+            
+            {/* Address */}
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 flex-shrink-0" />
+              <span className="font-body text-sm lg:text-base">Havenstraat 137, 1211 KK Hilversum</span>
+            </div>
+          </div>
+
+          {/* Footer Links */}
+          <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-primary-foreground/80 text-xs lg:text-sm font-body">
+            <div className="flex items-center gap-4">
+              <a href="#" className="hover:text-primary-foreground transition-colors">
+                Algemene Voorwaarden
+              </a>
+              <span className="hidden md:inline">|</span>
+              <a href="#" className="hover:text-primary-foreground transition-colors">
+                Privacy Verklaring
+              </a>
+            </div>
+            <span className="hidden md:inline">|</span>
+            <p>© Pluk 2026</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
