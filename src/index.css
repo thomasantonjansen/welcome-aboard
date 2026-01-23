@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap');
+@font-face {
+  font-family: "ClobberGrotesk-Light";
+  src: url("/fonts/ClobberGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Pluk - Infant Mental Health Practice Design System
    Warm, nurturing, and calming aesthetic with sage green tones
@@ -107,24 +113,32 @@
     @apply border-border;
   }
 
+  *, ::before, ::after {
+    font-family: "ClobberGrotesk-Light", sans-serif;
+    font-weight: 300 !important;
+    font-synthesis: none;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Outfit', sans-serif;
+    font-family: "ClobberGrotesk-Light", sans-serif;
+    font-weight: 300;
+    font-synthesis: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
+    font-family: "ClobberGrotesk-Light", sans-serif;
+    font-weight: 300;
   }
 }
 
 @layer components {
   .font-display {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "ClobberGrotesk-Light", sans-serif;
   }
   
   .font-body {
-    font-family: 'Outfit', sans-serif;
+    font-family: "ClobberGrotesk-Light", sans-serif;
   }
 }
 

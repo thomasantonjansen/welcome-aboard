@@ -5,6 +5,17 @@ export default {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    fontWeight: {
+      thin: "300",
+      extralight: "300",
+      light: "300",
+      normal: "300",
+      medium: "300",
+      semibold: "300",
+      bold: "300",
+      extrabold: "300",
+      black: "300",
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -73,8 +84,11 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Cormorant Garamond", "serif"],
-        body: ["Outfit", "sans-serif"],
+        sans: ["ClobberGrotesk-Light", "sans-serif"],
+        serif: ["ClobberGrotesk-Light", "sans-serif"],
+        mono: ["ClobberGrotesk-Light", "sans-serif"],
+        display: ["ClobberGrotesk-Light", "sans-serif"],
+        body: ["ClobberGrotesk-Light", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
